@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 import android.os.PowerManager.WakeLock;
+import android.widget.TextView;
 
 import android.widget.CompoundButton;
 
@@ -31,7 +32,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        debugText = (TextView)findViewById(R.id.debugText);
     }
 
 
@@ -60,8 +61,10 @@ public class MainActivity extends ActionBarActivity {
         boolean on = ((ToggleButton) view).isChecked();
 
         if (on) {
+            debugText.setText("ON!!!!!!!");
             ledon();
         } else {
+            debugText.setText("OFF!!!!!!!");
             ledoff();
         }
     }
